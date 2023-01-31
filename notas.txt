@@ -1,0 +1,9 @@
+Las vistas basadas en funciones (FBV) son las funciones que se ha estado trabajando hasta ahora para definir las vistas:
+	def home(request):
+	  # algo de codigo
+
+Por otra parte, las vistas basadas en clases (CBV) es nuevo modeo mucho mas completo:
+	- Sirven como modeloss
+	- Contienen atributos y metodos
+	- Permiten el uso de la herencia
+	- Etc
