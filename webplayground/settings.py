@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Instalamos la app ckeditor
+    'ckeditor',
     'core',
+    'pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +125,20 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CSRF_TRUSTED_ORIGINS = ['https://joletuar-ominous-space-eureka-r54vxwp59wp2575w-8000.preview.app.github.dev']
+
+# Ckeditor
+# Vamos a cambiar las configuraciones del ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        # Aquí especificamos que campos o que configuración se debe de mostrar en la barra de herramientas
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
+}
