@@ -8,7 +8,7 @@
     <div class="row mt-3">
       <div class="col-md-9 mx-auto">
         <div>
-          {% if 'ok' in request.GET %}
+          {% if 'ok' in request.GET %} <!-- Verificamos si el 'ok' está dentro del método GET -->
           <p style='color: green'>
             Actualización realizada correctamente
             <a href="{% url 'page' page.id page.title|slugify %}">Click para ver el resultado</a>
