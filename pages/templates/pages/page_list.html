@@ -17,7 +17,7 @@
               
               {% if request.user.is_staff %}
                 | <a href="{% url 'update_page' page.id %}">Editar</a>
-                <!--| <a href="#">Borrar</a> -->
+                | <a href="{% url 'delete_page' page.id %}">Borrar</a>
               {% endif %}
               
             </p>

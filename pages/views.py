@@ -4,6 +4,7 @@ from django.views.generic.list import ListView # Clase modelo que se utiliza par
 from django.views.generic.detail import DetailView # Clase modelo que se utiliza para mostrar el detalle en un template
 from django.views.generic.edit import CreateView # Clase modelo que se utiliza para mostrar un template de creación
 from django.views.generic.edit import UpdateView # Clase modelo que se utiliza para mostrar el template de actualización
+from django.views.generic.edit import DeleteView # Clase modelo que se utiliza para mostrar el template de eliminación
 
 # Dentro de los templates se puede acceder con "object" o con el "nombre del modelo"
 
@@ -40,3 +41,7 @@ class PageUpdateView(UpdateView):
     def get_success_url(self):
         # Se concatena un 'ok' para comprobar si la actualización se realizó correctamente
         return reverse_lazy('update_page', args=[self.object.id]) + '?ok'
+
+class PageDeleteView(DeleteView):
+    model = Page
+    success_url = reverse_lazy('pages')
