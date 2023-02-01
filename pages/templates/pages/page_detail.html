@@ -11,7 +11,7 @@
         <div>
           {{page.content|safe}}
           {% if request.user.is_staff %} <!-- .is_staff verifica si el usuario logeado forma parte del staff -->
-            <p><a href="#">Editar</a></p>
+            <p><a href="{% url 'pages' page.id %}">Editar</a></p>
           {% endif %}
         </div>
       </div>

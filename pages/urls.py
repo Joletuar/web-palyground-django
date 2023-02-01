@@ -4,7 +4,8 @@ from . import views
 urlpatterns = [
     path('', views.PageListView.as_view(), name='pages'),
     path('<int:pk>/<slug:slug>/', views.PageDetailView.as_view(), name='page'), # El modelo espera el id con el nombre pk
-    path('create/', views.PageCreateView.as_view(), name='create_page')
+    path('create/', views.PageCreateView.as_view(), name='create_page'),
+    path('update/<int:pk>', views.PageUpdateView.as_view(), name='update_page')
 ]
 
 # Existe otra forma que declarar las urls
