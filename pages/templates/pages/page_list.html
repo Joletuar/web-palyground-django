@@ -4,7 +4,7 @@
 {% block content %}
 <main role="main">
   <div class="container mb-4">
-    {% for page in pages %}
+    {% for page in page_list %} <!-- El nombre genérico que el modelo le da a lista es objec_list o tambien se pued utilizar el nombre del modelo: modelo_object-->
       <div class="row mt-3">
         <div class="col-md-9 mx-auto">
           <h2 class="mb-4">{{page.title}}</h2>
