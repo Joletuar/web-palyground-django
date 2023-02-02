@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "es"
 
 TIME_ZONE = "UTC"
 
@@ -142,3 +143,10 @@ CKEDITOR_CONFIGS = {
         ]
     }
 }
+
+# Auth redirects
+
+# Sobreescribimos la url a donde debe de reenviar despues de haberse identificado
+LOGIN_REDIRECT_URL = 'pages'
+# Sobreescribimos la url a donde debe de reenviarse depsues de terminar sesión
+LOGOUT_REDIRECT_URL = 'home'
