@@ -5,10 +5,11 @@ from django.views.generic.detail import DetailView # Clase modelo que se utiliza
 from django.views.generic.edit import CreateView # Clase modelo que se utiliza para mostrar un template de creación
 from django.views.generic.edit import UpdateView # Clase modelo que se utiliza para mostrar el template de actualización
 from django.views.generic.edit import DeleteView # Clase modelo que se utiliza para mostrar el template de eliminación
+from .forms import *
+
+
 
 # Dentro de los templates se puede acceder con "object" o con el "nombre del modelo"
-
-# Create your views here.
 
 # Al template hay que cambiarle el nombre y ponerle page_list
 class PageListView(ListView):
@@ -22,8 +23,12 @@ class PageDetailView(DetailView):
 class PageCreateView(CreateView):
     model = Page
     
+    # Vamos a pasarle el formulario que hemos creado
+    form_class = PageForm
+    
     # Aqui especificamos los campos que queremos que se muestren para editar
-    fields = ['title', 'content', 'order']
+    # Se puede quitar esto debido a que nuestra clase de formulario ya lo incluye
+    # fields = ['title', 'content', 'order']
     
     # Método que permite redigir a una página cuando el formulario se envió de manera correcta
     #def get_success_url(self):
@@ -34,8 +39,14 @@ class PageCreateView(CreateView):
 
 class PageUpdateView(UpdateView):
     model = Page
-    # Campos del modelo que se muestran para editar
-    fields = ['title', 'content', 'order']
+    
+    # Vamos a pasarle el formulario que hemos creado
+    form_class = PageForm
+    
+    # Aqui especificamos los campos que queremos que se muestren para editar
+    # Se puede quitar esto debido a que nuestra clase de formulario ya lo incluye
+    # fields = ['title', 'content', 'order']
+    
     template_name_suffix = '_update_form'
     
     def get_success_url(self):
