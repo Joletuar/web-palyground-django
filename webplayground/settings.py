@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -147,7 +148,7 @@ CKEDITOR_CONFIGS = {
 # Auth redirects
 
 # Sobreescribimos la url a donde debe de reenviar despues de haberse identificado
-LOGIN_REDIRECT_URL = 'pages'
+#LOGIN_REDIRECT_URL = 'pages'
 # Sobreescribimos la url a donde debe de reenviarse depsues de terminar sesión
 LOGOUT_REDIRECT_URL = 'home'
 
@@ -158,3 +159,7 @@ if DEBUG:
 else:
     # Aqui configuramos un email para producción
     pass
+
+# Configurar que pueda servir imágenes
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
