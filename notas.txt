@@ -7,3 +7,6 @@ Por otra parte, las vistas basadas en clases (CBV) es nuevo modeo mucho mas comp
 	- Contienen atributos y metodos
 	- Permiten el uso de la herencia
 	- Etc
+
+Una señal es un disparador que ocurre despues de algun evento en nuestro ORM
+La señal se crea en nuestro fichero models
